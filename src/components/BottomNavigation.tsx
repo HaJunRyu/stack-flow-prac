@@ -4,7 +4,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SettingsIcon from '@material-ui/icons/Settings';
-import { ActivityKeys, useFlow } from '../stackflow';
+import { ActivityKeys } from '../stackflow';
 import { useActivity } from '@stackflow/react';
 
 const useStyles = makeStyles({
@@ -20,7 +20,7 @@ const ACTIVITY_KEYS: ActivityKeys[] = ['RecentActivity', 'FavoritesActivity', 'S
 export default function BottomNavigation() {
   const classes = useStyles();
 
-  const { replace } = useFlow();
+  // const { replace } = useFlow();
   const activity = useActivity();
 
   const currentMenuIndex = ACTIVITY_KEYS.findIndex(activityKey => activityKey === activity.name);
@@ -29,7 +29,7 @@ export default function BottomNavigation() {
     <MuiBottomNavigation
       value={currentMenuIndex}
       onChange={(event, targetIndex) => {
-        replace(ACTIVITY_KEYS[targetIndex], {}, { animate: false });
+        // replace(ACTIVITY_KEYS[targetIndex], {}, { animate: false });
       }}
       showLabels
       className={classes.root}
