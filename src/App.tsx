@@ -1,5 +1,12 @@
+import '@stackflow/plugin-basic-ui/index.css';
+import { Stack } from './stackflow';
+
 function App() {
-  return <div>App</div>;
+  return (
+    <div>
+      <Stack />
+    </div>
+  );
 }
 
 export default App;
