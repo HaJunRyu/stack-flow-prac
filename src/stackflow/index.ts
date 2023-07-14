@@ -5,6 +5,8 @@ import RecentActivity from '../activities/RecentActivity';
 import ArticleActivity from '../activities/ArticleActivity';
 import FavoritesActivity from '../activities/FavoritesActivity';
 import SettingsActivity from '../activities/SettingsActivity';
+import AccountActivity from '../activities/AccountActivity';
+import MyArticlesActivity from '../activities/MyArticlesActivity';
 
 export const { Stack, useFlow, useStepFlow, activities } = stackflow({
   transitionDuration: 350,
@@ -19,6 +21,8 @@ export const { Stack, useFlow, useStepFlow, activities } = stackflow({
     FavoritesActivity,
     SettingsActivity,
     ArticleActivity,
+    AccountActivity,
+    MyArticlesActivity,
   },
   initialActivity: () => 'RecentActivity',
 });
