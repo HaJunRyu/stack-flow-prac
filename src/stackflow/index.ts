@@ -27,4 +27,5 @@ export const { Stack, useFlow, useStepFlow, activities } = stackflow({
   initialActivity: () => 'RecentActivity',
 });
 
-export type ActivityKeys = keyof typeof activities;
+type Activities = typeof activities;
+export type ActivityKeys = keyof Activities;
