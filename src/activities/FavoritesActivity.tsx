@@ -1,21 +1,21 @@
 import { ActivityComponentType } from '@stackflow/react';
 import { AppScreen } from '@stackflow/plugin-basic-ui';
-import { useFlow } from './stackflow';
-import BottomNavigation from './BottomNavigation';
+import { useFlow } from '../stackflow';
+import BottomNavigation from '../components/BottomNavigation';
 
-const TopActivity: ActivityComponentType = () => {
+const FavoritesActivity: ActivityComponentType = () => {
   const { push } = useFlow();
 
   const onClick = () => {
-    push('Article', {
+    push('ArticleActivity', {
       title: 'Hello',
     });
   };
 
   return (
-    <AppScreen appBar={{ title: 'TopActivity' }}>
+    <AppScreen appBar={{ title: 'FavoritesActivity' }}>
       <div>
-        My Activity
+        FavoritesActivity
         <button onClick={onClick}>Go to article page</button>
       </div>
       <BottomNavigation />
@@ -23,4 +23,4 @@ const TopActivity: ActivityComponentType = () => {
   );
 };
 
-export default TopActivity;
+export default FavoritesActivity;

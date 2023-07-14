@@ -1,13 +1,13 @@
 import { ActivityComponentType } from '@stackflow/react';
 import { AppScreen } from '@stackflow/plugin-basic-ui';
-import { useStepFlow } from './stackflow';
+import { useStepFlow } from '../stackflow';
 
 type ArticleParams = {
   title: string;
 };
-const Article: ActivityComponentType<ArticleParams> = ({ params }) => {
+const ArticleActivity: ActivityComponentType<ArticleParams> = ({ params }) => {
   // 타입 안정성을 위해 현재 액티비티의 이름을 넣어줘요
-  const { stepPush, stepReplace, stepPop } = useStepFlow('Article');
+  const { stepPush, stepReplace, stepPop } = useStepFlow('ArticleActivity');
 
   const onNextClick = () => {
     // `stepPush()`을 호출하면 params.title이 변경돼요.
@@ -40,4 +40,4 @@ const Article: ActivityComponentType<ArticleParams> = ({ params }) => {
   );
 };
 
-export default Article;
+export default ArticleActivity;
