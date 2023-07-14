@@ -1,8 +1,9 @@
 import { ActivityComponentType } from '@stackflow/react';
 import { AppScreen } from '@stackflow/plugin-basic-ui';
 import { useFlow } from './stackflow';
+import BottomNavigation from './SimpleBottomNavigation';
 
-const MyActivity: ActivityComponentType = () => {
+const TopActivity: ActivityComponentType = () => {
   const { push } = useFlow();
 
   const onClick = () => {
@@ -12,13 +13,14 @@ const MyActivity: ActivityComponentType = () => {
   };
 
   return (
-    <AppScreen appBar={{ title: 'My Activity' }}>
+    <AppScreen appBar={{ title: 'TopActivity' }}>
       <div>
         My Activity
         <button onClick={onClick}>Go to article page</button>
       </div>
+      <BottomNavigation />
     </AppScreen>
   );
 };
 
-export default MyActivity;
+export default TopActivity;

@@ -1,7 +1,7 @@
 import { stackflow } from '@stackflow/react';
 import { basicRendererPlugin } from '@stackflow/plugin-renderer-basic';
 import { basicUIPlugin } from '@stackflow/plugin-basic-ui';
-import MyActivity from './MyActivity';
+import TopActivity from './TopActivity';
 import Article from './Article';
 
 export const { Stack, useFlow, useStepFlow } = stackflow({
@@ -13,8 +13,8 @@ export const { Stack, useFlow, useStepFlow } = stackflow({
     }),
   ],
   activities: {
-    MyActivity,
+    TopActivity,
     Article,
   },
-  initialActivity: () => 'MyActivity',
+  initialActivity: () => 'TopActivity',
 });
