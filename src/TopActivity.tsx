@@ -1,7 +1,7 @@
 import { ActivityComponentType } from '@stackflow/react';
 import { AppScreen } from '@stackflow/plugin-basic-ui';
 import { useFlow } from './stackflow';
-import BottomNavigation from './SimpleBottomNavigation';
+import BottomNavigation from './BottomNavigation';
 
 const TopActivity: ActivityComponentType = () => {
   const { push } = useFlow();
