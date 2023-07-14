@@ -1,22 +1,26 @@
 import { ActivityComponentType } from '@stackflow/react';
 import { AppScreen } from '@stackflow/plugin-basic-ui';
-import { useFlow } from './stackflow';
+import { useStepFlow } from './stackflow';
 
 type ArticleParams = {
   title: string;
 };
 const Article: ActivityComponentType<ArticleParams> = ({ params }) => {
-  const { pop } = useFlow();
+  // 타입 안정성을 위해 현재 액티비티의 이름을 넣어줘요
+  const { stepPush } = useStepFlow('Article');
 
-  const onClick = () => {
-    pop();
+  const onNextClick = () => {
+    // `stepPush()`을 호출하면 params.title이 변경돼요.
+    stepPush({
+      title: 'Next Title',
+    });
   };
 
   return (
     <AppScreen appBar={{ title: 'Article' }}>
       <div>
         <h1>{params.title}</h1>
-        <button onClick={onClick}>back</button>
+        <button onClick={onNextClick}>next</button>
       </div>
     </AppScreen>
   );

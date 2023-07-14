@@ -4,7 +4,7 @@ import { basicUIPlugin } from '@stackflow/plugin-basic-ui';
 import MyActivity from './MyActivity';
 import Article from './Article';
 
-export const { Stack, useFlow } = stackflow({
+export const { Stack, useFlow, useStepFlow } = stackflow({
   transitionDuration: 350,
   plugins: [
     basicRendererPlugin(),
