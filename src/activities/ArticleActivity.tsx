@@ -2,6 +2,8 @@ import { AppScreen } from '@stackflow/plugin-basic-ui';
 import { FC } from 'react';
 import { DUMMY_ARTICLES } from '../constants/articles';
 import Article from '../components/Article';
+import OtherArticleList from '../components/OtherArticleList';
+import { Divider } from '@material-ui/core';
 
 interface ArticleActivityProps {
   params: {
@@ -18,6 +20,8 @@ const ArticleActivity: FC<ArticleActivityProps> = ({ params }) => {
   return (
     <AppScreen appBar={{ title: 'Article' }}>
       <Article title={article.title} content={article.content} thumbnailSrc={article.thumbnail} />
+      <Divider style={{ marginTop: 30 }} />
+      <OtherArticleList />
     </AppScreen>
   );
 };
