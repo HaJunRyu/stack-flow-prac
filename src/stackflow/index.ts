@@ -6,7 +6,7 @@ import ArticleActivity from '../activities/ArticleActivity';
 import FavoritesActivity from '../activities/FavoritesActivity';
 import SettingsActivity from '../activities/SettingsActivity';
 
-export const { Stack, useFlow, useStepFlow } = stackflow({
+export const { Stack, useFlow, useStepFlow, activities } = stackflow({
   transitionDuration: 350,
   plugins: [
     basicRendererPlugin(),
@@ -22,3 +22,5 @@ export const { Stack, useFlow, useStepFlow } = stackflow({
   },
   initialActivity: () => 'RecentActivity',
 });
+
+export type ActivityKeys = keyof typeof activities;
