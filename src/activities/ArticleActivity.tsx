@@ -1,7 +1,7 @@
 import { AppScreen } from '@stackflow/plugin-basic-ui';
-import { useStepFlow } from '../stackflow';
 import { FC } from 'react';
 import { DUMMY_ARTICLES } from '../constants/articles';
+import Article from '../components/Article';
 
 interface ArticleActivityProps {
   params: {
@@ -17,9 +17,7 @@ const ArticleActivity: FC<ArticleActivityProps> = ({ params }) => {
 
   return (
     <AppScreen appBar={{ title: 'Article' }}>
-      <div>
-        <h1>{article.title}</h1>
-      </div>
+      <Article title={article.title} content={article.content} thumbnailSrc={article.thumbnail} />
     </AppScreen>
   );
 };
